@@ -28,7 +28,22 @@ JumpStart
      - ACE version not support, all go to Workstation
   
     share vm
-    
+    vmware workstation install menu:
+    如何在VMware Workstation内安装Windows Server 2008
+在VMware Workstation内安装Windows Server 2008，与在VMware Workstation内安装其它子操作系统没有太大区别，但还有一些注意事项。
+因此，这里一步一步介绍如何安装： 1.如果还没有VMware Workstation，你可以从下载全功能限期演示版本：VMware Workstation Evaluation。
+2.从DVD或包含这个DVD的可下载ISO文件中获得Windows Server 2008。确保Win 2008的版本与你计算机的硬件相匹配。因此，如果你的CPU是AMB 64位的，那么你需要用Windows Server 2008 AMB 64位的版本。 
+3.确保你的VM Workstation版本是最新版本，以确保Win2008是列入的子操作系统。我的版本是Workstation 6.0.1，Windows Server 2008在清单上。
+4.打开Vmware Workstation，点击Home标签上的New Virtual Machine。
+5.采用默认设置，并选择你想创建的Typical虚拟机。 
+6.对于VM类型，采用Windows默认设置，并为你的硬件选择Windows Server 2008版本（32位或64位）。
+7.输入你选择的VM名。我的VM名是“Win2008-1”，因为我计划创建多个VM。
+8.在下一个标签，选择你想将该虚拟机接入的网络类型。如果你已用现成的Windows AD域，我推荐用专用网络（Host-only）。但是，如果你不连接上这个域，或者你需要在虚拟机和网络之间互连，比如Internet，那么你可以选Bridged Networking选项。
+9.对于Windows Server 2008，默认的虚拟硬盘大小为24GB。如果你选择不使用动态硬盘（现在就分配硬盘空间），那么这个硬盘空间直到需要时才会使用。我建议选择默认，然后点击“完成”。 
+10.此时你需要建立VM来启动Windows Server 2008。你可以插入DVD盘，并映射虚拟CD/DVD，或者导入你下载的ISO文件，像这样：
+11.根据你主机系统RAM的大小，建议把VM的RAM改为1GB或2GB（虽然启动和运行速度会很慢，因为默认分配的RAM是512MB）。 
+12.现在，开机启动你的新Windows Server 2008！
+see PDF file VMware_Workstation使用手册.pdf
     ISO file  
       所谓镜像文件其实和ZIP压缩包类似，它将特定的一系列文件按照一定的格式制作成单一的文件，以方便用户下载和使用，
       例如一个测试版的操作系统、游戏等。镜像文件不仅具有ZIP压缩包的“合成”功能，它最重要的特点是可以被特定的软件识别并可直接刻录到光盘上。
