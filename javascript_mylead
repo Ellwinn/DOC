@@ -1,0 +1,49 @@
+
+---自调用函数
+函数表达式可以 "自调用"。
+自调用表达式会自动调用。
+如果表达式后面紧跟 () ，则会自动调用。
+不能自调用声明的函数。
+通过添加括号，来说明它是一个函数表达式：
+实例
+(function () {
+    var x = "Hello!!";      // 我将调用自己
+})();
+
+尝试一下 »
+以上函数实际上是一个 匿名自我调用的函数 (没有函数名)。
+---
+---函数可作为一个值使用
+JavaScript 函数作为一个值使用：
+实例
+function myFunction(a, b) {
+    return a * b;
+}
+
+var x = myFunction(4, 3);
+
+尝试一下 »
+JavaScript 函数可作为表达式使用：
+实例
+function myFunction(a, b) {
+    return a * b;
+}
+var x = myFunction(4, 3) * 2;
+---
+---JavaScript 闭包
+还记得函数自我调用吗？该函数会做什么？
+实例
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+add();
+add();
+add();
+// 计数器为 3
+变量 add 指定了函数自我调用的返回字值。
+自我调用函数只执行一次。设置计数器为 0。并返回函数表达式。
+add变量可以作为一个函数使用。非常棒的部分是它可以访问函数上一层作用域的计数器。
+这个叫作 JavaScript 闭包。它使得函数拥有私有变量变成可能。
+计数器受匿名函数的作用域保护，只能通过 add 方法修改。
